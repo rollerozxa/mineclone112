@@ -1,0 +1,19 @@
+# textdomain: mcl_boats
+Sneak to dismount=
+Oak Boat=橡木船
+Spruce Boat=杉木船
+Birch Boat=白樺木船
+Jungle Boat=叢林木船
+Acacia Boat=相思木船
+Dark Oak Boat=黑橡木船
+Obsidian Boat=
+Oak Chest Boat=
+Spruce Chest Boat=
+Birch Chest Boat=
+Jungle Chest Boat=
+Acacia Chest Boat=
+Dark Oak Chest Boat=
+Boats are used to travel on the surface of water.=船是用來在水上行走的交通工具。
+Rightclick on a water source to place the boat. Rightclick the boat to enter it. Use [Left] and [Right] to steer, [Forwards] to speed up and [Backwards] to slow down or move backwards. Use [Sneak] to leave the boat, punch the boat to make it drop as an item.=
+Boat=船
+Water vehicle=水上交通工具

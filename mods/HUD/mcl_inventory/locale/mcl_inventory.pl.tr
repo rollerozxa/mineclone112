@@ -1,0 +1,27 @@
+# textdomain: mcl_inventory
+Building Blocks=Bloki budowlane
+Decoration Blocks=Bloki dekoracyjne
+Redstone=Czerwienit
+Transportation=Transport
+Miscellaneous=Różne
+Search Items=Wyszukaj przedmioty
+Foodstuffs=Jedzenie
+Tools=Narzędzia
+Combat=Walka
+Mobs=Moby
+Brewing=Warzenie
+Materials=Materiały
+Survival Inventory=Ekwipunek przetrwania
+Switch stack size=
+@1/@2=@1/@2
+Recipe book=Książka z recepturami
+Help=Pomoc
+Advancements=
+Select player skin=Wybierz skin gracza
+Inventory=Ekwipunek
+Crafting=Wytwarzanie
+[<gamemode>] [<player>]=
+Change gamemode (survival/creative) for yourself or player=
+Player not online=
+Gamemode =
+Gamemode for player =

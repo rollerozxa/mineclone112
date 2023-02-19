@@ -1,0 +1,27 @@
+# textdomain: mcl_inventory
+Building Blocks=Строительные блоки
+Decoration Blocks=Декоративные блоки
+Redstone=Редстоун (красный камень)
+Transportation=Транспорт
+Miscellaneous=Прочее
+Search Items=Искать предметы
+Foodstuffs=Продовольствие
+Tools=Инструменты
+Combat=Битва
+Mobs=Мобы
+Brewing=Зелья
+Materials=Материалы
+Survival Inventory=Инвентарь выживания
+Switch stack size=
+@1/@2=@1/@2
+Recipe book=Книга рецептов
+Help=Помощь
+Advancements=
+Select player skin=Выбор скина
+Inventory=Инвентарь
+Crafting=Крафтинг (изготовление)
+[<gamemode>] [<player>]=
+Change gamemode (survival/creative) for yourself or player=
+Player not online=
+Gamemode =
+Gamemode for player =

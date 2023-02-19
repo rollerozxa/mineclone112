@@ -1,0 +1,18 @@
+# textdomain: mcl_credits
+A faithful Open Source clone of Minecraft=
+Sneak to skip=
+Jump to speed up (additionally sprint)=
+Creator of MineClone=
+Creator of MineClone2=
+Maintainers=
+Previous Maintainers=
+Developers=
+Contributors=
+MineClone5=
+Mineclonia=
+Original Mod Authors=
+3D Models=
+Textures=
+Translations=
+Funders=
+Special thanks=

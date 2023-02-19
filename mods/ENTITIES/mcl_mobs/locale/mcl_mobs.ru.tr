@@ -1,0 +1,13 @@
+# textdomain: mcl_mobs
+Peaceful mode active! No monsters will spawn.=Мирный режим включён! Монстры не будут появляться.
+Removes all spawned mobs except nametagged and tamed ones. all removes all mobs, nametagged only nametagged ones and with the range paramter all mobs in a distance of the current player are removed.=
+Name Tag=Именная бирка
+Give names to mobs=Даёт имена мобам
+Set name at anvil=Задайте имя при помощи наковальни
+A name tag is an item to name a mob.=Именная бирка это предмет, чтобы дать мобу имя.
+Before you use the name tag, you need to set a name at an anvil. Then you can use the name tag to name a mob. This uses up the name tag.=Прежде чем использовать именную бирку, нужно задать имя на наковальне. Тогда вы сможете использовать бирку, чтобы дать имя мобу.
+This allows you to place a single mob.=Позволяет вам разместить одного моба.
+Just place it where you want the mob to appear. Animals will spawn tamed, unless you hold down the sneak key while placing. If you place this on a mob spawner, you change the mob it spawns.=Просто поместите это туда, где хотите, чтобы появился моб. Животные будут появляться уже прирученные, если это не нужно, удерживайте клавишу [Красться] при размещении. Если поместить это на спаунер, появляющийся из него моб будет изменён.
+You need the “maphack” privilege to change the mob spawner.=Вам нужно обладать привилегией “maphack”, чтобы изменить спаунер моба.
+Only peaceful mobs allowed!=Разрешены только мирные мобы!
+spawn_mob is a chatcommand that allows you to type in the name of a mob without 'typing mobs_mc:' all the time like so; 'spawn_mob spider'. however, there is more you can do with this special command, currently you can edit any number, boolean, and string variable you choose with this format: spawn_mob 'any_mob:var<mobs_variable@=variable_value>:'. any_mob being your mob of choice, mobs_variable being the variable, and variable value being the value of the chosen variable. and example of this format: @n spawn_mob skeleton:var<passive@=true>:@n this would spawn a skeleton that wouldn't attack you. REMEMBER-THIS> when changing a number value always prefix it with 'NUM', example: @n spawn_mob skeleton:var<jump_height@=NUM10>:@n this setting the skelly's jump height to 10. if you want to make multiple changes to a mob, you can, example: @n spawn_mob skeleton:var<passive@=true>::var<jump_height@=NUM10>::var<fly_in@=air>::var<fly@=true>:@n etc.=

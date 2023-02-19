@@ -1,0 +1,5 @@
+# textdomain: mcl_compass
+Compass=Bússola
+Points to the world origin=Aponta para a origem do mundo
+Compasses are tools which point to the world origin (X@=0, Z@=0) or the spawn point in the Overworld.=Bússolas são ferramentas que aponta para a origem do mundo (X@=0, Z@=0) ou para o lugar de spawn na Superfície.
+A Compass always points to the world spawn point when the player is in the overworld.  In other dimensions, it spins randomly.=Uma bússola sempre aponta para o lugar de spawn do mundo quando o jogador está na superfície. Em outras dimensões, ela gira aleatoriamente.

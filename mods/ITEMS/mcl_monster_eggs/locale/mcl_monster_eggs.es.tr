@@ -1,0 +1,9 @@
+# textdomain: mcl_monster_eggs
+Hides a silverfish=
+Infested Stone=Piedra infestada
+Infested Cobblestone=Roca infestada
+Infested Stone Bricks=Ladrillos de piedra infestados
+Infested Cracked Stone Bricks=Ladrillos de piedra agrietados infestados
+Infested Mossy Stone Bricks=Ladrillos de piedra musgosos infestados
+Infested Chiseled Stone Bricks=Ladrillos de piedra cincelados infestados
+@n			An infested block is a block from which a silverfish will pop out when it is broken.@n			It looks identical to its normal counterpart.@n		=

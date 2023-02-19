@@ -1,0 +1,23 @@
+# textdomain: mcl_dye
+White Dye=
+Light Grey Dye=
+Grey Dye=
+Black Dye=
+Purple Dye=
+Blue Dye=
+Light Blue Dye=
+Cyan Dye=
+Cactus Green=
+Lime Dye=
+Dandelion Yellow=
+Brown Dye=
+Orange Dye=
+Rose Red=
+Magenta Dye=
+Pink Dye=
+This item is a dye which is used for dyeing and crafting.=
+Rightclick on a sheep to dye its wool. Other things are dyed by crafting.=
+Bone Meal=
+Speeds up plant growth=
+Bone meal is a white dye and also useful as a fertilizer to speed up the growth of many plants.=
+Rightclick a sheep to turn its wool white. Rightclick a plant to speed up its growth. Note that not all plants can be fertilized like this. When you rightclick a grass block, tall grass and flowers will grow all over the place.=
