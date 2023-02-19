@@ -60,16 +60,6 @@ end
 
 local E1 = { "mcl_core:emerald", 1, 1 } -- one emerald
 
--- Special trades for v6 only
--- NOTE: These symbols MUST only be added at the end of a tier
-local TRADE_V6_RED_SANDSTONE, TRADE_V6_DARK_OAK_SAPLING, TRADE_V6_ACACIA_SAPLING, TRADE_V6_BIRCH_SAPLING
-if minetest.get_mapgen_setting("mg_name") == "v6" then
-	TRADE_V6_RED_SANDSTONE = { E1, { "mcl_core:redsandstone", 12, 16 } }
-	TRADE_V6_DARK_OAK_SAPLING = { { "mcl_core:emerald", 6, 9 }, { "mcl_core:darksapling", 1, 1 } }
-	TRADE_V6_ACACIA_SAPLING = { { "mcl_core:emerald", 14, 17 }, { "mcl_core:acaciasapling", 1, 1 } }
-	TRADE_V6_BIRCH_SAPLING = { { "mcl_core:emerald", 8, 11 }, { "mcl_core:birchsapling", 1, 1 } }
-end
-
 local tiernames = {
 	"Novice",
 	"Apprentice",
@@ -122,9 +112,6 @@ local professions = {
 			{
 			{ E1, { "mcl_farming:carrot_item_gold", 3, 10 } },
 			{ E1, { "mcl_potions:speckled_melon", 4, 1 } },
-			TRADE_V6_BIRCH_SAPLING,
-			TRADE_V6_DARK_OAK_SAPLING,
-			TRADE_V6_ACACIA_SAPLING,
 			},
 		}
 	},
@@ -456,7 +443,6 @@ local professions = {
 			--{ { "FIXME: scute", 4, 4 }, E1 },
 			{ { "mcl_potions:glass_bottle", 9, 9 }, E1 },
 			{ { "mcl_core:emerald", 5, 5 }, { "mcl_throwing:ender_pearl", 1, 1 } },
-			TRADE_V6_RED_SANDSTONE,
 			},
 			{
 			 { { "mcl_nether:nether_wart_item", 22, 22 }, E1 },

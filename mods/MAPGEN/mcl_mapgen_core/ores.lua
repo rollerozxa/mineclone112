@@ -394,37 +394,6 @@ if minetest.settings:get_bool("mcl_generate_ores", true) then
 	})
 
 	--
-	-- Emerald
-	--
-
-	if mg_name == "v6" then
-		-- Generate everywhere in v6, but rarely.
-
-		-- Common spawn
-		minetest.register_ore({
-			ore_type       = "scatter",
-			ore            = "mcl_core:stone_with_emerald",
-			wherein        = stonelike,
-			clust_scarcity = 14340,
-			clust_num_ores = 1,
-			clust_size     = 1,
-			y_min          = mcl_vars.mg_overworld_min,
-			y_max          = mcl_worlds.layer_to_y(29),
-		})
-		-- Rare spawn
-		minetest.register_ore({
-			ore_type       = "scatter",
-			ore            = "mcl_core:stone_with_emerald",
-			wherein        = stonelike,
-			clust_scarcity = 21510,
-			clust_num_ores = 1,
-			clust_size     = 1,
-			y_min          = mcl_worlds.layer_to_y(30),
-			y_max          = mcl_worlds.layer_to_y(32),
-		})
-	end
-
-	--
 	-- Lapis Lazuli
 	--
 

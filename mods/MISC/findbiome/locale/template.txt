@@ -7,4 +7,3 @@ Biome found at @1.=
 No biome found!=
 List all biomes=
 No biomes.=
-Not supported. The “biomeinfo” mod is required for v6 mapgen support!=

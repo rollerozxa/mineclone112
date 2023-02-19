@@ -12,46 +12,9 @@ local modpath = minetest.get_modpath(modname)
 -- Aliases for map generator outputs
 --
 
-minetest.register_alias("mapgen_air", "air")
 minetest.register_alias("mapgen_stone", "mcl_core:stone")
-minetest.register_alias("mapgen_tree", "mcl_core:tree")
-minetest.register_alias("mapgen_leaves", "mcl_core:leaves")
-minetest.register_alias("mapgen_jungletree", "mcl_core:jungletree")
-minetest.register_alias("mapgen_jungleleaves", "mcl_core:jungleleaves")
-minetest.register_alias("mapgen_pine_tree", "mcl_core:sprucetree")
-minetest.register_alias("mapgen_pine_needles", "mcl_core:spruceleaves")
-
-minetest.register_alias("mapgen_apple", "mcl_core:leaves")
 minetest.register_alias("mapgen_water_source", "mcl_core:water_source")
-minetest.register_alias("mapgen_dirt", "mcl_core:dirt")
-minetest.register_alias("mapgen_dirt_with_grass", "mcl_core:dirt_with_grass")
-minetest.register_alias("mapgen_dirt_with_snow", "mcl_core:dirt_with_grass_snow")
-minetest.register_alias("mapgen_sand", "mcl_core:sand")
-minetest.register_alias("mapgen_gravel", "mcl_core:gravel")
-minetest.register_alias("mapgen_clay", "mcl_core:clay")
-minetest.register_alias("mapgen_lava_source", "air") -- Built-in lava generator is too unpredictable, we generate lava on our own
-minetest.register_alias("mapgen_cobble", "mcl_core:cobble")
-minetest.register_alias("mapgen_mossycobble", "mcl_core:mossycobble")
-minetest.register_alias("mapgen_junglegrass", "mcl_flowers:fern")
-minetest.register_alias("mapgen_stone_with_coal", "mcl_core:stone_with_coal")
-minetest.register_alias("mapgen_stone_with_iron", "mcl_core:stone_with_iron")
-minetest.register_alias("mapgen_desert_sand", "mcl_core:sand")
-minetest.register_alias("mapgen_desert_stone", "mcl_core:sandstone")
-minetest.register_alias("mapgen_sandstone", "mcl_core:sandstone")
-if minetest.get_modpath("mclx_core") then
-	minetest.register_alias("mapgen_river_water_source", "mclx_core:river_water_source")
-else
-	minetest.register_alias("mapgen_river_water_source", "mcl_core:water_source")
-end
-minetest.register_alias("mapgen_snow", "mcl_core:snow")
-minetest.register_alias("mapgen_snowblock", "mcl_core:snowblock")
-minetest.register_alias("mapgen_ice", "mcl_core:ice")
-
-minetest.register_alias("mapgen_stair_cobble", "mcl_stairs:stair_cobble")
-minetest.register_alias("mapgen_sandstonebrick", "mcl_core:sandstonesmooth")
-minetest.register_alias("mapgen_stair_sandstonebrick", "mcl_stairs:stair_sandstone")
-minetest.register_alias("mapgen_stair_sandstone_block", "mcl_stairs:stair_sandstone")
-minetest.register_alias("mapgen_stair_desert_stone", "mcl_stairs:stair_sandstone")
+minetest.register_alias("mapgen_river_water_source", "mclx_core:river_water_source")
 
 dofile(modpath.."/api.lua")
 dofile(modpath.."/ores.lua")
@@ -61,32 +24,10 @@ local superflat = mg_name == "flat" and minetest.get_mapgen_setting("mcl_superfl
 
 -- Content IDs
 local c_bedrock = minetest.get_content_id("mcl_core:bedrock")
-local c_obsidian = minetest.get_content_id("mcl_core:obsidian")
-local c_stone = minetest.get_content_id("mcl_core:stone")
-local c_dirt = minetest.get_content_id("mcl_core:dirt")
-local c_dirt_with_grass = minetest.get_content_id("mcl_core:dirt_with_grass")
-local c_dirt_with_grass_snow = minetest.get_content_id("mcl_core:dirt_with_grass_snow")
-local c_reeds = minetest.get_content_id("mcl_core:reeds")
-local c_sand = minetest.get_content_id("mcl_core:sand")
---local c_sandstone = minetest.get_content_id("mcl_core:sandstone")
 local c_void = minetest.get_content_id("mcl_core:void")
 local c_lava = minetest.get_content_id("mcl_core:lava_source")
-local c_water = minetest.get_content_id("mcl_core:water_source")
-local c_soul_sand = minetest.get_content_id("mcl_nether:soul_sand")
-local c_netherrack = minetest.get_content_id("mcl_nether:netherrack")
 local c_nether_lava = minetest.get_content_id("mcl_nether:nether_lava_source")
---local c_end_stone = minetest.get_content_id("mcl_end:end_stone")
 local c_realm_barrier = minetest.get_content_id("mcl_core:realm_barrier")
-local c_top_snow = minetest.get_content_id("mcl_core:snow")
-local c_snow_block = minetest.get_content_id("mcl_core:snowblock")
-local c_clay = minetest.get_content_id("mcl_core:clay")
-local c_leaves = minetest.get_content_id("mcl_core:leaves")
-local c_jungleleaves = minetest.get_content_id("mcl_core:jungleleaves")
---local c_jungletree = minetest.get_content_id("mcl_core:jungletree")
-local c_cocoa_1 = minetest.get_content_id("mcl_cocoas:cocoa_1")
-local c_cocoa_2 = minetest.get_content_id("mcl_cocoas:cocoa_2")
-local c_cocoa_3 = minetest.get_content_id("mcl_cocoas:cocoa_3")
-local c_vine = minetest.get_content_id("mcl_core:vine")
 local c_air = minetest.CONTENT_AIR
 
 local mg_flags = minetest.settings:get_flags("mg_flags")
@@ -363,15 +304,15 @@ local function end_basic(vm, data, data2, emin, emax, area, minp, maxp, blocksee
 	local lvm_used = false
 	local pr = PseudoRandom(blockseed)
 	local nodes
-	if mg_name ~= "v6" then
-		nodes = minetest.find_nodes_in_area(emin, emax, {"mcl_core:water_source"})
-		if #nodes > 0 then
-			lvm_used = true
-			for _,n in pairs(nodes) do
-				data[area:index(n.x, n.y, n.z)] = c_air
-			end
+
+	nodes = minetest.find_nodes_in_area(emin, emax, {"mcl_core:water_source"})
+	if #nodes > 0 then
+		lvm_used = true
+		for _,n in pairs(nodes) do
+			data[area:index(n.x, n.y, n.z)] = c_air
 		end
 	end
+
 	return true, false
 end
 
@@ -381,12 +322,8 @@ mcl_mapgen_core.register_generator("end_fixes", end_basic, function(minp,maxp)
 	if maxp.y < mcl_vars.mg_end_min or minp.y > mcl_vars.mg_end_max then return end
 end, 9999, true)
 
-if mg_name ~= "v6" and mg_name ~= "singlenode" then
+if mg_name ~= "singlenode" then
 	mcl_mapgen_core.register_generator("block_fixes", block_fixes, nil, 9999, true)
-end
-
-if mg_name == "v6" then
-	dofile(modpath.."/v6.lua")
 end
 
 -- This should be moved to mcl_structures eventually if the dependencies can be sorted out.
@@ -424,7 +361,7 @@ minetest.register_lbm({
 	nodenames = {"mcl_core:dirt_with_grass", "mcl_flowers:tallgrass", "mcl_flowers:double_grass", "mcl_flowers:double_grass_top", "mcl_flowers:fern", "mcl_flowers:double_fern", "mcl_flowers:double_fern_top", "mcl_core:reeds", "mcl_core:dirt_with_grass_snow"},
 	run_at_every_load = true,
 	action = function(pos, node)
-		if mg_name ~= "v6" and mg_name ~= "singlenode" then
+		if mg_name ~= "singlenode" then
 			local biome_data = minetest.get_biome_data(pos)
 			local biome = biome_data.biome
 			local biome_name = minetest.get_biome_name(biome)

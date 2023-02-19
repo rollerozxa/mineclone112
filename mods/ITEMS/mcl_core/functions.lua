@@ -369,14 +369,10 @@ function mcl_core.generate_tree(pos, tree_type, options)
 	local balloon = options and options.balloon
 
 	if tree_type == nil or tree_type == OAK_TREE_ID then
-		if mg_name == "v6" then
-			mcl_core.generate_v6_oak_tree(pos)
+		if balloon then
+			mcl_core.generate_balloon_oak_tree(pos)
 		else
-			if balloon then
-				mcl_core.generate_balloon_oak_tree(pos)
-			else
-				mcl_core.generate_oak_tree(pos)
-			end
+			mcl_core.generate_oak_tree(pos)
 		end
 	elseif tree_type == DARK_OAK_TREE_ID then
 		mcl_core.generate_dark_oak_tree(pos)
@@ -384,11 +380,7 @@ function mcl_core.generate_tree(pos, tree_type, options)
 		if two_by_two then
 			mcl_core.generate_huge_spruce_tree(pos)
 		else
-			if mg_name == "v6" then
-				mcl_core.generate_v6_spruce_tree(pos)
-			else
-				mcl_core.generate_spruce_tree(pos)
-			end
+			mcl_core.generate_spruce_tree(pos)
 		end
 	elseif tree_type == ACACIA_TREE_ID then
 		mcl_core.generate_acacia_tree(pos)
@@ -396,79 +388,10 @@ function mcl_core.generate_tree(pos, tree_type, options)
 		if two_by_two then
 			mcl_core.generate_huge_jungle_tree(pos)
 		else
-			if mg_name == "v6" then
-				mcl_core.generate_v6_jungle_tree(pos)
-			else
-				mcl_core.generate_jungle_tree(pos)
-			end
+			mcl_core.generate_jungle_tree(pos)
 		end
 	elseif tree_type == BIRCH_TREE_ID then
 		mcl_core.generate_birch_tree(pos)
-	end
-end
-
--- Classic oak in v6 style
-function mcl_core.generate_v6_oak_tree(pos)
-	local trunk = "mcl_core:tree"
-	local leaves = "mcl_core:leaves"
-	local node
-	for dy=1,4 do
-		pos.y = pos.y+dy
-		if minetest.get_node(pos).name ~= "air" then
-			return
-		end
-		pos.y = pos.y-dy
-	end
-	node = {name = trunk}
-	for dy=0,4 do
-		pos.y = pos.y+dy
-		if minetest.get_node(pos).name == "air" then
-			minetest.add_node(pos, node)
-		end
-		pos.y = pos.y-dy
-	end
-
-	node = {name = leaves}
-	pos.y = pos.y+3
-	--[[local rarity = 0
-	if math.random(0, 10) == 3 then
-		rarity = 1
-	end]]
-	for dx=-2,2 do
-		for dz=-2,2 do
-			for dy=0,3 do
-				pos.x = pos.x+dx
-				pos.y = pos.y+dy
-				pos.z = pos.z+dz
-
-				if dx == 0 and dz == 0 and dy==3 then
-					if minetest.get_node(pos).name == "air" and math.random(1, 5) <= 4 then
-						minetest.add_node(pos, node)
-						minetest.add_node(pos, air_leaf(leaves))
-					end
-				elseif dx == 0 and dz == 0 and dy==4 then
-					if minetest.get_node(pos).name == "air" and math.random(1, 5) <= 4 then
-						minetest.add_node(pos, node)
-						minetest.add_node(pos, air_leaf(leaves))
-					end
-				elseif math.abs(dx) ~= 2 and math.abs(dz) ~= 2 then
-					if minetest.get_node(pos).name == "air" then
-						minetest.add_node(pos, node)
-						minetest.add_node(pos, air_leaf(leaves))
-					end
-				else
-					if math.abs(dx) ~= 2 or math.abs(dz) ~= 2 then
-						if minetest.get_node(pos).name == "air" and math.random(1, 5) <= 4 then
-							minetest.add_node(pos, node)
-							minetest.add_node(pos, air_leaf(leaves))
-						end
-					end
-				end
-				pos.x = pos.x-dx
-				pos.y = pos.y-dy
-				pos.z = pos.z-dz
-			end
-		end
 	end
 end
 
@@ -518,102 +441,6 @@ local function add_spruce_leaves(data, vi, c_air, c_ignore, c_snow, c_spruce_lea
 	if node_id == c_air or node_id == c_ignore or node_id == c_snow then
 		data[vi] = c_spruce_leaves
 	end
-end
-
-function mcl_core.generate_v6_spruce_tree(pos)
-	local x, y, z = pos.x, pos.y, pos.z
-	local maxy = y + math.random(9, 13) -- Trunk top
-
-	local c_air = minetest.get_content_id("air")
-	local c_ignore = minetest.get_content_id("ignore")
-	local c_spruce_tree = minetest.get_content_id("mcl_core:sprucetree")
-	local c_spruce_leaves  = minetest.get_content_id("mcl_core:spruceleaves")
-	local c_snow = minetest.get_content_id("mcl_core:snow")
-
-	local vm = minetest.get_voxel_manip()
-	local minp, maxp = vm:read_from_map(
-		{x = x - 3, y = y, z = z - 3},
-		{x = x + 3, y = maxy + 3, z = z + 3}
-	)
-	local a = VoxelArea:new({MinEdge = minp, MaxEdge = maxp})
-	local data = vm:get_data()
-
-	-- Upper branches layer
-	local dev = 3
-	for yy = maxy - 1, maxy + 1 do
-		for zz = z - dev, z + dev do
-			local vi = a:index(x - dev, yy, zz)
-			local via = a:index(x - dev, yy + 1, zz)
-			for xx = x - dev, x + dev do
-				if math.random() < 0.95 - dev * 0.05 then
-					add_spruce_leaves(data, vi, c_air, c_ignore, c_snow,
-						c_spruce_leaves)
-				end
-				vi  = vi + 1
-				via = via + 1
-			end
-		end
-		dev = dev - 1
-	end
-
-	-- Centre top nodes
-	add_spruce_leaves(data, a:index(x, maxy + 1, z), c_air, c_ignore, c_snow,
-		c_spruce_leaves)
-	add_spruce_leaves(data, a:index(x, maxy + 2, z), c_air, c_ignore, c_snow,
-		c_spruce_leaves) -- Paramat added a pointy top node
-
-	-- Lower branches layer
-	local my = 0
-	for i = 1, 20 do -- Random 2x2 squares of leaves
-		local xi = x + math.random(-3, 2)
-		local yy = maxy + math.random(-6, -5)
-		local zi = z + math.random(-3, 2)
-		if yy > my then
-			my = yy
-		end
-		for zz = zi, zi+1 do
-			local vi = a:index(xi, yy, zz)
-			local via = a:index(xi, yy + 1, zz)
-			for xx = xi, xi + 1 do
-				add_spruce_leaves(data, vi, c_air, c_ignore, c_snow,
-					c_spruce_leaves)
-				vi  = vi + 1
-				via = via + 1
-			end
-		end
-	end
-
-	dev = 2
-	for yy = my + 1, my + 2 do
-		for zz = z - dev, z + dev do
-			local vi = a:index(x - dev, yy, zz)
-			local via = a:index(x - dev, yy + 1, zz)
-			for xx = x - dev, x + dev do
-				if math.random() < 0.95 - dev * 0.05 then
-					add_spruce_leaves(data, vi, c_air, c_ignore, c_snow,
-						c_spruce_leaves)
-				end
-				vi  = vi + 1
-				via = via + 1
-			end
-		end
-		dev = dev - 1
-	end
-
-	-- Trunk
-	-- Force-place lowest trunk node to replace sapling
-	data[a:index(x, y, z)] = c_spruce_tree
-	for yy = y + 1, maxy do
-		local vi = a:index(x, yy, z)
-		local node_id = data[vi]
-		if node_id == c_air or node_id == c_ignore or
-				node_id == c_spruce_leaves or node_id == c_snow then
-			data[vi] = c_spruce_tree
-		end
-	end
-
-	vm:set_data(data)
-	vm:write_to_map()
 end
 
 function mcl_core.generate_spruce_tree(pos)
@@ -736,52 +563,6 @@ local function add_trunk_and_leaves(data, a, pos, tree_cid, leaves_cid,
 		end
 		end
 	end
-end
-
--- Old jungle tree grow function from Minetest Game 0.4.15, imitating v6 jungle trees
-function mcl_core.generate_v6_jungle_tree(pos)
-	--[[
-		NOTE: Jungletree-placing code is currently duplicated in the engine
-		and in games that have saplings; both are deprecated but not
-		replaced yet
-	--]]
-
-	local x, y, z = pos.x, pos.y, pos.z
-	local height = math.random(8, 12)
-	local c_air = minetest.get_content_id("air")
-	local c_ignore = minetest.get_content_id("ignore")
-	local c_jungletree = minetest.get_content_id("mcl_core:jungletree")
-	local c_jungleleaves = minetest.get_content_id("mcl_core:jungleleaves")
-
-	local vm = minetest.get_voxel_manip()
-	local minp, maxp = vm:read_from_map(
-		{x = x - 3, y = y - 1, z = z - 3},
-		{x = x + 3, y = y + height + 1, z = z + 3}
-	)
-	local a = VoxelArea:new({MinEdge = minp, MaxEdge = maxp})
-	local data = vm:get_data()
-
-	add_trunk_and_leaves(data, a, pos, c_jungletree, c_jungleleaves, height, 3, 30)
-
-	-- Roots
-	for z_dist = -1, 1 do
-		local vi_1 = a:index(x - 1, y - 1, z + z_dist)
-		local vi_2 = a:index(x - 1, y, z + z_dist)
-		for x_dist = -1, 1 do
-			if math.random(1, 3) >= 2 then
-				if data[vi_1] == c_air or data[vi_1] == c_ignore then
-					data[vi_1] = c_jungletree
-				elseif data[vi_2] == c_air or data[vi_2] == c_ignore then
-					data[vi_2] = c_jungletree
-				end
-			end
-			vi_1 = vi_1 + 1
-			vi_2 = vi_2 + 1
-		end
-	end
-
-	vm:set_data(data)
-	vm:write_to_map()
 end
 
 function mcl_core.generate_jungle_tree(pos)

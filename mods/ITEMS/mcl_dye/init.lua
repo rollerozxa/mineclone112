@@ -301,20 +301,18 @@ local function apply_bone_meal(pointed_thing, user)
 								minetest.add_node(pos, {name="mcl_flowers:tallgrass", param2=col})
 							else
 								local flowers_table
-								if mg_name == "v6" then
+
+								local biome = minetest.get_biome_name(minetest.get_biome_data(pos).biome)
+								if biome == "Swampland" or biome == "Swampland_shore" or biome == "Swampland_ocean" or biome == "Swampland_deep_ocean" or biome == "Swampland_underground" then
+									flowers_table = flowers_table_swampland
+								elseif biome == "FlowerForest" or biome == "FlowerForest_beach" or biome == "FlowerForest_ocean" or biome == "FlowerForest_deep_ocean" or biome == "FlowerForest_underground" then
+									flowers_table = flowers_table_flower_forest
+								elseif biome == "Plains" or biome == "Plains_beach" or biome == "Plains_ocean" or biome == "Plains_deep_ocean" or biome == "Plains_underground" or biome == "SunflowerPlains" or biome == "SunflowerPlains_ocean" or biome == "SunflowerPlains_deep_ocean" or biome == "SunflowerPlains_underground" then
 									flowers_table = flowers_table_plains
 								else
-									local biome = minetest.get_biome_name(minetest.get_biome_data(pos).biome)
-									if biome == "Swampland" or biome == "Swampland_shore" or biome == "Swampland_ocean" or biome == "Swampland_deep_ocean" or biome == "Swampland_underground" then
-										flowers_table = flowers_table_swampland
-									elseif biome == "FlowerForest" or biome == "FlowerForest_beach" or biome == "FlowerForest_ocean" or biome == "FlowerForest_deep_ocean" or biome == "FlowerForest_underground" then
-										flowers_table = flowers_table_flower_forest
-									elseif biome == "Plains" or biome == "Plains_beach" or biome == "Plains_ocean" or biome == "Plains_deep_ocean" or biome == "Plains_underground" or biome == "SunflowerPlains" or biome == "SunflowerPlains_ocean" or biome == "SunflowerPlains_deep_ocean" or biome == "SunflowerPlains_underground" then
-										flowers_table = flowers_table_plains
-									else
-										flowers_table = flowers_table_simple
-									end
+									flowers_table = flowers_table_simple
 								end
+
 								minetest.add_node(pos, {name=flowers_table[math.random(1, #flowers_table)]})
 							end
 						end
