@@ -67,11 +67,6 @@ Please read <http://minecraft.gamepedia.com/Breaking> to learn how digging times
 * `hopper=X`: Hopper (1 = downwards, 2 = sideways)
 * `portal=1`: Portal (node that teleports players and things by standing inside)
 * `end_portal_frame=X`: End portal frame (1 = no eye, 2 = with eye)
-* `coral=X`: Coral (any type) (1 = alive, 2 = dead)
-* `coral_plant=X`: Coral in the "plant" shape (1 = alive, 2 = dead)
-* `coral_fan=X`: Coral fan (1 = alive, 2 = dead)
-* `coral_block=X`: Coral block (1 = alive, 2 = dead)
-* `coral_species=X`: Specifies the species of a coral; equal X means equal species
 * `set_on_fire=X`: Sets any (not fire-resistant) mob or player on fire for X seconds when touching
 * `compostability=X`: Item can be used on a composter block; X (1-100) is the % chance of adding a level of compost
 * `leaves=X`: Node will spotaneously decay if no tree trunk nodes remain within 6 blocks distance.

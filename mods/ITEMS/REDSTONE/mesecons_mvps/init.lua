@@ -873,11 +873,6 @@ mesecon.register_mvps_unsticky("mesecons_torch:mesecon_torch_on")
 mesecon.register_mvps_unsticky("mesecons_torch:mesecon_torch_off")
 mesecon.register_mvps_unsticky("mesecons_torch:mesecon_torch_on_wall")
 mesecon.register_mvps_unsticky("mesecons_torch:mesecon_torch_off_wall")
--- Sea Pickle
-mesecon.register_mvps_unsticky("mcl_ocean:sea_pickle_1_dead_brain_coral_block")
-mesecon.register_mvps_unsticky("mcl_ocean:sea_pickle_2_dead_brain_coral_block")
-mesecon.register_mvps_unsticky("mcl_ocean:sea_pickle_3_dead_brain_coral_block")
-mesecon.register_mvps_unsticky("mcl_ocean:sea_pickle_4_dead_brain_coral_block")
 -- Shulker chests
 mesecon.register_mvps_unsticky("mcl_chests:black_shulker_box_small")
 mesecon.register_mvps_unsticky("mcl_chests:blue_shulker_box_small")

@@ -790,57 +790,10 @@ mcl_observers:observer_up_off 111 91 91
 mcl_observers:observer_up_on 111 91 91
 
 # mcl_ocean
-mcl_ocean:brain_coral 202 85 149
-mcl_ocean:brain_coral_block 202 85 149
-mcl_ocean:brain_coral_fan 202 85 149
-mcl_ocean:bubble_coral 145 76 196
-mcl_ocean:bubble_coral_block 145 76 196
-mcl_ocean:bubble_coral_fan 145 76 196
-mcl_ocean:dead_brain_coral 131 114 124
-mcl_ocean:dead_brain_coral_block 131 114 124
-mcl_ocean:dead_brain_coral_fan 131 114 124
-mcl_ocean:dead_bubble_coral 115 106 123
-mcl_ocean:dead_bubble_coral_block 115 106 123
-mcl_ocean:dead_bubble_coral_fan 115 106 123
-mcl_ocean:dead_fire_coral 129 103 101
-mcl_ocean:dead_fire_coral_block 129 103 101
-mcl_ocean:dead_fire_coral_fan 129 103 101
-mcl_ocean:dead_horn_coral 154 147 127
-mcl_ocean:dead_horn_coral_block 154 147 127
-mcl_ocean:dead_horn_coral_fan 154 147 127
-mcl_ocean:dead_tube_coral 100 106 129
-mcl_ocean:dead_tube_coral_block 100 106 129
-mcl_ocean:dead_tube_coral_fan 100 106 129
-mcl_ocean:dried_kelp_block 56 71 57
-mcl_ocean:fire_coral 201 75 62
-mcl_ocean:fire_coral_block 201 75 62
-mcl_ocean:fire_coral_fan 201 75 62
-mcl_ocean:horn_coral 232 195 70
-mcl_ocean:horn_coral_block 232 195 70
-mcl_ocean:horn_coral_fan 232 195 70
-mcl_ocean:kelp_dirt 109 84 70
-mcl_ocean:kelp_gravel 115 109 103
-mcl_ocean:kelp_redsand 225 137 111
-mcl_ocean:kelp_sand 221 171 127
 mcl_ocean:prismarine 106 127 123
 mcl_ocean:prismarine_brick 107 116 117
 mcl_ocean:prismarine_dark 77 90 97
 mcl_ocean:sea_lantern 141 152 152
-mcl_ocean:sea_pickle_1_dead_brain_coral_block 131 114 124
-mcl_ocean:sea_pickle_1_off_dead_brain_coral_block 131 114 124
-mcl_ocean:sea_pickle_2_dead_brain_coral_block 131 114 124
-mcl_ocean:sea_pickle_2_off_dead_brain_coral_block 131 114 124
-mcl_ocean:sea_pickle_3_dead_brain_coral_block 131 114 124
-mcl_ocean:sea_pickle_3_off_dead_brain_coral_block 131 114 124
-mcl_ocean:sea_pickle_4_dead_brain_coral_block 131 114 124
-mcl_ocean:sea_pickle_4_off_dead_brain_coral_block 131 114 124
-mcl_ocean:seagrass_dirt 109 84 70
-mcl_ocean:seagrass_gravel 115 109 103
-mcl_ocean:seagrass_redsand 225 137 111
-mcl_ocean:seagrass_sand 221 171 127
-mcl_ocean:tube_coral 58 91 211
-mcl_ocean:tube_coral_block 58 91 211
-mcl_ocean:tube_coral_fan 58 91 211
 
 # mcl_portals
 mcl_portals:end_portal_frame 101 92 80
