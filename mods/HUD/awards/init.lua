@@ -18,7 +18,5 @@ local modpath = minetest.get_modpath(minetest.get_current_modname())
 
 dofile(modpath.."/api.lua")
 dofile(modpath.."/chat_commands.lua")
-dofile(modpath.."/sfinv.lua")
-dofile(modpath.."/unified_inventory.lua")
 dofile(modpath.."/triggers.lua")
 
