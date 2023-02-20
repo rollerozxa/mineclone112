@@ -73,9 +73,9 @@ end
 -- Reset HUD bars after food poisoning
 
 function mcl_hunger.reset_bars_poison_hunger(player)
-	hb.change_hudbar(player, "hunger", nil, nil, "hbhunger_icon.png", nil, "hbhunger_bar.png")
+	hb.change_hudbar(player, "hunger", nil, nil, "hbhunger_icon.png")
 	if mcl_hunger.debug then
-		hb.change_hudbar(player, "exhaustion", nil, nil, nil, nil, "mcl_hunger_bar_exhaustion.png")
+		hb.change_hudbar(player, "exhaustion")
 	end
 end
 
@@ -208,9 +208,9 @@ function mcl_hunger.item_eat(hunger_change, replace_with_item, poisontime, poiso
 				if do_poison then
 					-- Set food poison bars
 					if exhaust and exhaust > 0 then
-						hb.change_hudbar(user, "hunger", nil, nil, "mcl_hunger_icon_foodpoison.png", nil, "mcl_hunger_bar_foodpoison.png")
+						hb.change_hudbar(user, "hunger", nil, nil, "mcl_hunger_icon_foodpoison.png")
 						if mcl_hunger.debug then
-							hb.change_hudbar(user, "exhaustion", nil, nil, nil, nil, "mcl_hunger_bar_foodpoison.png")
+							hb.change_hudbar(user, "exhaustion")
 						end
 						mcl_hunger.poison_hunger[name] = mcl_hunger.poison_hunger[name] + 1
 					end

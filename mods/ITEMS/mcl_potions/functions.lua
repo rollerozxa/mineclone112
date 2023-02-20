@@ -21,13 +21,13 @@ local icon_ids = {}
 local function potions_set_hudbar(player)
 
 	if EF.poisoned[player] and EF.regenerating[player] then
-		hb.change_hudbar(player, "health", nil, nil, "hbhunger_icon_regen_poison.png", nil, "hudbars_bar_health.png")
+		hb.change_hudbar(player, "health", nil, nil, "hbhunger_icon_regen_poison.png")
 	elseif EF.poisoned[player] then
-		hb.change_hudbar(player, "health", nil, nil, "hbhunger_icon_health_poison.png", nil, "hudbars_bar_health.png")
+		hb.change_hudbar(player, "health", nil, nil, "hbhunger_icon_health_poison.png")
 	elseif EF.regenerating[player] then
-		hb.change_hudbar(player, "health", nil, nil, "hudbars_icon_regenerate.png", nil, "hudbars_bar_health.png")
+		hb.change_hudbar(player, "health", nil, nil, "hudbars_icon_regenerate.png")
 	else
-		hb.change_hudbar(player, "health", nil, nil, "hudbars_icon_health.png", nil, "hudbars_bar_health.png")
+		hb.change_hudbar(player, "health", nil, nil, "hudbars_icon_health.png")
 	end
 
 end

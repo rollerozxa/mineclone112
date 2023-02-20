@@ -3,9 +3,6 @@
 # available. You can choose between the default progress-bar-like bars and the good
 # old statbars like you know from vanilla Minetest.
 # These values are possible:
-#   - progress_bar:    A horizontal progress-bar-like bar with a label, showing numerical value
-#                      (current, maximum), and an icon. These bars usually convey the most
-#                      information. This is the default and recommended value.
 #   - statbar_classic: Classic statbar, like in vanilla Minetest. Made out of up to 20
 #                      half-symbols. Those bars represent the vague ratio between
 #                      the current value and the maximum value. 1 half-symbol stands for
@@ -18,7 +15,7 @@ hudbars_bar_type (HUD bars style) enum progress_bar progress_bar,statbar_classic
 
 
 # If enabled (default), the breath indicators in the HUD will be automatically hidden shortly
-# after the breath has been filled up. Otherwise, the breath will always be displayed. 
+# after the breath has been filled up. Otherwise, the breath will always be displayed.
 hudbars_autohide_breath (Automatically hide breath indicators) bool true
 
 # This setting changes the way the HUD bars are ordered on the display. You can choose
